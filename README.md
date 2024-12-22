@@ -1,0 +1,2 @@
+# futoverseny-kezelo
+Alkalmazásfejlesztés beadandó
