@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="hu">
+<head>
+    <title>Verseny részletek</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<header>
+    <h1>GDE - Alkalmazásfejlesztés</h1>
+    <h2>Futóverseny kezelő alkalmazás</h2>
+</header>
+
+<a href="/" class="back-link">← Vissza a versenyekhez</a>
+
+<h2>Verseny eredmények</h2>
+
+<div th:if="${eredmenyek.empty}" class="no-results">
+    Ehhez a versenyhez még nincsenek eredmények.
+</div>
+
+<table th:if="${!eredmenyek.empty}">
+    <thead>
+    <tr>
+        <th>Futó neve</th>
+        <th>Időeredmény (perc)</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="eredmeny : ${eredmenyek}">
+        <td th:text="${eredmeny.futo.nev}">Futó neve</td>
+        <td th:text="${eredmeny.idoEredmeny}">Időeredmény</td>
+    </tr>
+    </tbody>
+</table>
+<footer>
+    <p class="creator">Készítette: Bobek Attila - XRF4PS</p>
+</footer>
+</body>
+</html>
